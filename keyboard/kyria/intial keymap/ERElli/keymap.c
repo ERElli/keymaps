@@ -45,18 +45,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | LOWER  |  | RAISE  | Enter  | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  | NUMNAV  | Enter  | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_QWERTY] = LAYOUT(
         TD_ESC ,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
         CTL_TAB,   CTL_A,   ALT_S,   GUI_D,   SFT_F,    KC_G,                                        KC_H,   SFT_J,   GUI_K,   ALT_L, CTL_SCN, KC_QUOT,
         OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD, XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
-                                   KC_MUTE, OS_LALT, OS_LGUI,  KC_SPC,   LOWER,   RAISE,  KC_ENT, OS_RGUI, OS_RALT,  KC_DEL
+                                   KC_MUTE, OS_LALT, OS_LGUI,  KC_SPC,  SYMBOL,  NUMNAV,  KC_ENT, OS_RGUI, OS_RALT,  KC_DEL
     ),
 
 /*
- * Lower Layer: Symbols
+ * SYMBOL Layer
  *
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |   !    |   @    |   {    |   }    |   |    |                                      |   \    |   _    |        |        |        |        |
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                            |        |        |        |        |        |  |   =    |   ;    |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
-    [_LOWER] = LAYOUT(
+    [_SYMBOL] = LAYOUT(
         _______, KC_EXLM,   KC_AT, KC_LCBR, KC_RCBR, KC_PIPE,                                     KC_BSLS, KC_UNDS, _______, _______, _______, _______,
         _______, KC_HASH,  KC_DLR, KC_LPRN, KC_RPRN,  KC_GRV,                                     KC_PLUS, KC_MINS, KC_LT  ,   KC_GT, KC_QUES,  KC_DQT,
         _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______, _______, _______, _______, KC_AMPR, KC_ASTR, KC_COMM,  KC_DOT, KC_SLSH, _______,
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 /*
- * Raise Layer: Number, media, navigation
+ * NUMNAV Layer: Number, media, navigation
  * - add more navigation keys
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |   1    |   2    |   3    |   4    |   5    |                                      |   6    |   7    |   8    |   9    |   0    |        |
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                            |        |        |        |        |        |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
-    [_RAISE] = LAYOUT(
+    [_NUMNAV] = LAYOUT(
         _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______,
         _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, _______,                                     KC_HOME, KC_LEFT,   KC_UP, KC_RGHT, _______, _______,
         _______, _______, _______,   TD_CP,   TD_SC, _______, _______, _______, _______, _______,  KC_END,  KC_BWD, KC_DOWN,  KC_FWD, _______, _______,
@@ -228,7 +228,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
         }
     }
     else if (index == 1) {
-        if (layer == _LOWER) {
+        if (layer == _SYMBOL) {
             encoder_action_word_scroll(clockwise);
         } else if (layer == _WINDOWMANAGER) {
             encoder_action_move_space(clockwise);
@@ -246,18 +246,18 @@ const rgblight_segment_t PROGMEM caps_lock[] = RGBLIGHT_LAYER_SEGMENTS(
     {13, 1, HSV_CAPS}
 );
 
-const rgblight_segment_t PROGMEM lower_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, HSV_LOWER},
-    {3, 1, HSV_LOWER},
-    {10, 2, HSV_LOWER},
-    {13, 1, HSV_LOWER}
+const rgblight_segment_t PROGMEM symbol_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 2, HSV_SYMBOL},
+    {3, 1, HSV_SYMBOL},
+    {10, 2, HSV_SYMBOL},
+    {13, 1, HSV_SYMBOL}
 );
 
-const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, HSV_RAISE},
-    {3, 1, HSV_RAISE},
-    {10, 2, HSV_RAISE},
-    {13, 1, HSV_RAISE}
+const rgblight_segment_t PROGMEM numnav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 2, HSV_NUMNAV},
+    {3, 1, HSV_NUMNAV},
+    {10, 2, HSV_NUMNAV},
+    {13, 1, HSV_NUMNAV}
 );
 
 const rgblight_segment_t PROGMEM winman_layer[] = RGBLIGHT_LAYER_SEGMENTS(
@@ -269,8 +269,8 @@ const rgblight_segment_t PROGMEM winman_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     caps_lock,
-    lower_layer,
-    raise_layer,
+    symbol_layer,
+    numnav_layer,
     winman_layer
 );
 
@@ -287,10 +287,10 @@ bool led_update_user(led_t led_state) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _LOWER, _RAISE, _WINDOWMANAGER);
+    state = update_tri_layer_state(state, _SYMBOL, _NUMNAV, _WINDOWMANAGER);
 
-    rgblight_set_layer_state(1, layer_state_cmp(state, _LOWER));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _RAISE));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _SYMBOL));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _NUMNAV));
     rgblight_set_layer_state(3, layer_state_cmp(state, _WINDOWMANAGER));
 
     return state;

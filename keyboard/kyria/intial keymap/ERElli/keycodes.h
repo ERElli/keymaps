@@ -4,8 +4,8 @@
 
 enum layers {
     _QWERTY = 0,
-    _LOWER,
-    _RAISE,
+    _SYMBOL,
+    _NUMNAV,
     _ADJUST,
     _WINDOWMANAGER
 };
@@ -15,8 +15,8 @@ enum layers {
  * https://docs.qmk.fm/#/keycodes?id=layer-switching
  */
 #define ADJUST TG(_ADJUST)
-#define LOWER LT(_LOWER, KC_BSPC) /* Lower when held, Backspace when tapped */
-#define RAISE LT(_RAISE, KC_DEL)
+#define SYMBOL LT(_SYMBOL, KC_BSPC) /* SYMBOL when held, Backspace when tapped */
+#define NUMNAV LT(_NUMNAV, KC_DEL)
 #define WINMAN TG(_WINDOWMANAGER)
 
 /*

@@ -6,8 +6,8 @@
     - [Window Manager Keys](#window-manager-keys)
   - [Layers](#layers)
     - [QWERTY](#qwerty)
-    - [LOWER](#lower)
-    - [RAISE](#raise)
+    - [SYMBOL](#SYMBOL)
+    - [NUMNAV](#NUMNAV)
     - [ADJUST](#adjust)
     - [WINDOWMANAGER](#windowmanager)
 # ERElli [Kyria](https://github.com/splitkb/kyria) Keymap
@@ -41,8 +41,8 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
-| LOWER   | Momentarilty activate Lower layer when held, backspace when tapped.        |
-| RAISE   | Momentarily activate Raise layer when held, delete when tapped             |
+| SYMBOL  | Momentarilty activate Symbol layer when held, backspace when tapped.       |
+| NUMNAV  | Momentarily activate Numnav layer when held, delete when tapped            |
 | WINMAN  | Toggle Window Manager layer                                                |
 
 ### Window Manager Keys
@@ -75,12 +75,12 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | LOWER  |  | RAISE  | Enter  | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  | NUMNAV | Enter  | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
 
-### LOWER
+### SYMBOL
 ```c
 /*
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
@@ -95,7 +95,7 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  */
 ```
 
-### RAISE
+### NUMNAV
 ```c
 /*
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.

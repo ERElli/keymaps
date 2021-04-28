@@ -62,10 +62,10 @@ void render_layer_state(void) {
         case _QWERTY:
             oled_write_P(PSTR("Default"), false);
             break;
-        case _LOWER:
+        case _SYMBOL:
             oled_write_P(PSTR("Symbol"), false);
             break;
-        case _RAISE:
+        case _NUMNAV:
             oled_write_P(PSTR("Num/Nav/Med"), false);
             break;
         case _ADJUST:
