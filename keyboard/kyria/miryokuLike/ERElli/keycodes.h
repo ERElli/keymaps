@@ -4,7 +4,7 @@
 
 enum layers {
     _QWERTY = 0,
-    _SYMBOL,
+    _NUML,
     _NUMNAV,
     _ADJUST,
     _WINDOWMANAGER
@@ -15,7 +15,7 @@ enum layers {
  * https://docs.qmk.fm/#/keycodes?id=layer-switching
  */
 #define ADJUST TG(_ADJUST)
-#define SYMBOL LT(_SYMBOL, KC_BSPC) /* SYMBOL when held, Backspace when tapped */
+#define NUML LT(_NUML, KC_ENT)
 #define NUMNAV LT(_NUMNAV, KC_DEL)
 #define WINMAN TG(_WINDOWMANAGER)
 
@@ -23,7 +23,7 @@ enum layers {
  * One shot mod keys
  * https://docs.qmk.fm/#/one_shot_keys
 */
-#define OS_LALT OSM(MOD_LALT)   /*  */
+#define OS_LALT OSM(MOD_LALT)
 #define OS_LGUI OSM(MOD_LGUI)
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RALT OSM(MOD_RALT)

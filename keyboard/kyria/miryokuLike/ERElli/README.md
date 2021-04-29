@@ -6,8 +6,8 @@
     - [Window Manager Keys](#window-manager-keys)
   - [Layers](#layers)
     - [QWERTY](#qwerty)
-    - [SYMBOL](#SYMBOL)
-    - [NUMNAV](#NUMNAV)
+    - [NUML](#numl)
+    - [NUMNAV](#numnav)
     - [ADJUST](#adjust)
     - [WINDOWMANAGER](#windowmanager)
 # ERElli [Kyria](https://github.com/splitkb/kyria) Keymap
@@ -41,7 +41,7 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
-| SYMBOL  | Momentarilty activate Symbol layer when held, backspace when tapped.       |
+| NUML    | Momentarilty activate NUML layer when held, enter when tapped.             |
 | NUMNAV  | Momentarily activate Numnav layer when held, delete when tapped            |
 | WINMAN  | Toggle Window Manager layer                                                |
 
@@ -75,22 +75,22 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  | NUMNAV | Enter  | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  NUML  | Enter  | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
 
-### SYMBOL
+### NUML
 ```c
 /*
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * |        |   !    |   @    |   {    |   }    |   |    |                                      |   \    |   _    |        |        |        |        |
+ * |        |   [    |   7    |   8    |   9    |   ]    |                                      |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |   #    |   $    |   (    |   )    |   `    |                                      |   +    |   -    |   <    |   >    |   ?    |   "    |
+ * |  Space |   ;    |   4    |   5    |   6    |   =    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |   %    |   ^    |   [    |   ]    |   ~    |        |        |  |        |        |   &    |   *    |   ,    |   .    |   /    |        |
+ * |        |   `    |   1    |   2    |   3    |   \    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |        |        |        |        |        |  |   =    |   ;    |        |        |        |
+ *                            |        |        |   .    |   0    |   -    |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
