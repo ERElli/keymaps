@@ -6,7 +6,6 @@ enum layers {
     _QWERTY = 0,
     _NSL,
     _SNSL,
-    _NUMNAV,
     _ADJUST,
     _WINDOWMANAGER
 };
@@ -18,7 +17,6 @@ enum layers {
 #define ADJUST TG(_ADJUST)
 #define NSL LT(_NSL, KC_BSPC)
 #define SNSL LT(_SNSL, KC_ENT)
-#define NUMNAV LT(_NUMNAV, KC_DEL)
 #define WINMAN TG(_WINDOWMANAGER)
 
 /*

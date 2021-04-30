@@ -8,7 +8,6 @@
     - [QWERTY](#qwerty)
     - [NSL](#nsl)
     - [SNSL](#snsl)
-    - [NUMNAV](#numnav)
     - [ADJUST](#adjust)
     - [WINDOWMANAGER](#windowmanager)
 # ERElli [Kyria](https://github.com/splitkb/kyria) Keymap
@@ -44,7 +43,6 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
 | NSL     | Momentarilty activate NSL layer when held, backspace when tapped.          |
 | SNSL    | Momentarilty activate SNSL layer when held, enter when tapped.             |
-| NUMNAV  | Momentarily activate Numnav layer when held, delete when tapped            |
 | WINMAN  | Toggle Window Manager layer                                                |
 
 ### Window Manager Keys
@@ -108,21 +106,6 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |        |   ~    |   !    |   @    |   #    |   |    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |        |        |   (    |    )   |   _    |  |        |        |        |        |        |
- *                            `--------------------------------------------'  `--------------------------------------------'
- */
-```
-
-### NUMNAV
-```c
-/*
- * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * |        |   1    |   2    |   3    |   4    |   5    |                                      |   6    |   7    |   8    |   9    |   0    |        |
- * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |        |  Prev  |  Play  |  Next  |        |                                      |  Home  | Right  |   Up   |  Left  |        |        |
- * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        | TD_CP  | TD_SC  |        |        |        |  |        |        |  End   | KC_BWD |  Down  | KC_FWD |        |        |
- * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |        |        |        |        |        |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```

@@ -68,9 +68,6 @@ void render_layer_state(void) {
         case _SNSL:
             oled_write_P(PSTR("Shifted Num & Syms"), false);
             break;
-        case _NUMNAV:
-            oled_write_P(PSTR("Num/Nav/Med"), false);
-            break;
         case _ADJUST:
             oled_write_P(PSTR("Adjust"), false);
             break;
