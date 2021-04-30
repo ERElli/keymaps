@@ -4,7 +4,7 @@
 
 enum layers {
     _QWERTY = 0,
-    _NUML,
+    _NSL,
     _NUMNAV,
     _ADJUST,
     _WINDOWMANAGER
@@ -15,7 +15,7 @@ enum layers {
  * https://docs.qmk.fm/#/keycodes?id=layer-switching
  */
 #define ADJUST TG(_ADJUST)
-#define NUML LT(_NUML, KC_ENT)
+#define NSL LT(_NSL, KC_ENT)
 #define NUMNAV LT(_NUMNAV, KC_DEL)
 #define WINMAN TG(_WINDOWMANAGER)
 

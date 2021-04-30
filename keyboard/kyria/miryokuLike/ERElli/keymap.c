@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  NUML  | Enter  | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  NSL   | Enter  | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_QWERTY] = LAYOUT(
          TD_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
         CTL_TAB,   CTL_A,   ALT_S,   GUI_D,   SFT_F,    KC_G,                                        KC_H,   SFT_J,   GUI_K,   ALT_L, CTL_SCN, KC_QUOT,
         OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD, XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
-                                   KC_MUTE, OS_LALT, OS_LGUI,  KC_SPC,  SYMBOL,    NUML,  KC_ENT, OS_RGUI, OS_RALT,  KC_DEL
+                                   KC_MUTE, OS_LALT, OS_LGUI,  KC_SPC,  SYMBOL,     NSL,  KC_ENT, OS_RGUI, OS_RALT,  KC_DEL
     ),
 
 /*
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                            |        |        |   .    |   0    |   -    |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
-    [_NUML] = LAYOUT(
+    [_NSL] = LAYOUT(
           KC_NO, KC_LBRC,    KC_7,    KC_8,    KC_9, KC_RBRC,                                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
          KC_SPC, KC_SCLN,    KC_4,    KC_5,    KC_6,  KC_EQL,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
           KC_NO,  KC_GRV,    KC_1,    KC_2,    KC_3, KC_BSLS,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
@@ -247,10 +247,10 @@ const rgblight_segment_t PROGMEM caps_lock[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM symbol_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, HSV_NUML},
-    {3, 1, HSV_NUML},
-    {10, 2, HSV_NUML},
-    {13, 1, HSV_NUML}
+    {0, 2, HSV_NSL},
+    {3, 1, HSV_NSL},
+    {10, 2, HSV_NSL},
+    {13, 1, HSV_NSL}
 );
 
 const rgblight_segment_t PROGMEM numnav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
@@ -289,7 +289,7 @@ bool led_update_user(led_t led_state) {
 layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _SYMBOL, _NUMNAV, _WINDOWMANAGER);
 
-    rgblight_set_layer_state(1, layer_state_cmp(state, _NUML));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _NSL));
     rgblight_set_layer_state(2, layer_state_cmp(state, _NUMNAV));
     rgblight_set_layer_state(3, layer_state_cmp(state, _WINDOWMANAGER));
 
