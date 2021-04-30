@@ -7,6 +7,7 @@
   - [Layers](#layers)
     - [QWERTY](#qwerty)
     - [NSL](#nsl)
+    - [SNSL](#snsl)
     - [NUMNAV](#numnav)
     - [ADJUST](#adjust)
     - [WINDOWMANAGER](#windowmanager)
@@ -41,7 +42,8 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
-| NSL     | Momentarilty activate NSL layer when held, enter when tapped.              |
+| NSL     | Momentarilty activate NSL layer when held, backspace when tapped.          |
+| SNSL    | Momentarilty activate SNSL layer when held, enter when tapped.             |
 | NUMNAV  | Momentarily activate Numnav layer when held, delete when tapped            |
 | WINMAN  | Toggle Window Manager layer                                                |
 
@@ -75,7 +77,7 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  NSL   | Enter  | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
@@ -91,6 +93,21 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |        |   `    |   1    |   2    |   3    |   \    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |        |        |   .    |   0    |   -    |  |        |        |        |        |        |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+```
+
+### SNSL
+```c
+/*
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |   {    |   &    |   *    |   (    |   }    |                                      |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |  Space |   :    |   $    |   %    |   ^    |   +    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |   ~    |   !    |   @    |   #    |   |    |        |        |  |        |        |        |        |        |        |        |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |   (    |    )   |   _    |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```

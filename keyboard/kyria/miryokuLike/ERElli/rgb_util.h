@@ -4,6 +4,7 @@ uint8_t val;
 
 #define HSV_DEFAULT 40, 180, 100
 #define HSV_NSL 191, 255, 100
+#define HSV_SNSL 128, 255, 100
 #define HSV_NUMNAV 128, 255, 100
 #define HSV_WINMAN 234, 128, 100
 #define HSV_CAPS 0, 255, 100
