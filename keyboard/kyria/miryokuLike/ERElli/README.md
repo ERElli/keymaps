@@ -6,6 +6,7 @@
     - [Window Manager Keys](#window-manager-keys)
   - [Layers](#layers)
     - [QWERTY](#qwerty)
+    - [NAV](#nav)
     - [NSL](#nsl)
     - [SNSL](#snsl)
     - [ADJUST](#adjust)
@@ -41,8 +42,9 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
-| NSL     | Momentarilty activate NSL layer when held, backspace when tapped.          |
-| SNSL    | Momentarilty activate SNSL layer when held, enter when tapped.             |
+| NAV     | Momentarily activate NAV layer when held, space when tapped.               |
+| NSL     | Momentarily activate NSL layer when held, backspace when tapped.           |
+| SNSL    | Momentarily activate SNSL layer when held, enter when tapped.              |
 | WINMAN  | Toggle Window Manager layer                                                |
 
 ### Window Manager Keys
@@ -75,7 +77,22 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI| Space  |  Tab   |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+```
+
+### NAV
+```c
+/*
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |        |        |        |        |        |                                      |  Undo  |  Cut   |  Copy  | Paste  |  Redo  |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  Caps  |  Left  |  Down  |   Up   | Right  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |        |        |        |        |        |        |        |  |        |        |        |  Home  | Pg Dn  | Pg Up  |  End   |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |        |        |        |  | Enter  |  Bspc  | Delete |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```

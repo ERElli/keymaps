@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  | SYMBOL |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| OS_LGUI|  Nav   |  Tab   |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_QWERTY] = LAYOUT(
          TD_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
         CTL_TAB,   CTL_A,   ALT_S,   GUI_D,   SFT_F,    KC_G,                                        KC_H,   SFT_J,   GUI_K,   ALT_L, CTL_SCN, KC_QUOT,
         OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD, XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
-                                   KC_MUTE, OS_LALT, OS_LGUI,  KC_SPC,  SYMBOL,    SNSL,     NSL, OS_RGUI, OS_RALT,  KC_DEL
+                                   KC_MUTE, OS_LALT, OS_LGUI,     NAV,  KC_TAB,    SNSL,     NSL, OS_RGUI, OS_RALT,  KC_DEL
     ),
 
 /*
@@ -93,6 +93,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_SPC, KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
         KC_NO, KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
                                    KC_NO,   KC_NO, KC_LPRN, KC_RPRN, KC_UNDS,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+    ),
+
+/*
+ * Nav Layer
+ *
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |        |        |        |        |        |                                      |  Undo  |  Cut   |  Copy  | Paste  |  Redo  |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  Caps  |  Left  |  Down  |   Up   | Right  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |        |        |        |        |        |        |        |  |        |        |        |  Home  | Pg Dn  | Pg Up  |  End   |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |        |        |        |  | Enter  |  Bspc  | Delete |        |        |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+    [_NAV] = LAYOUT(
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                       U_UDO,   U_CUT,   U_CPY,   U_PST,   U_RDO,   KC_NO,
+        KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,   KC_NO,                                     KC_CAPS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,   KC_NO,
+                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_ENT, KC_BSPC,  KC_DEL,   KC_NO,   KC_NO
     ),
 
 /*
@@ -228,7 +248,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
         }
     }
     else if (index == 1) {
-        if (layer == _SYMBOL) {
+        if (layer == _NAV) {
             encoder_action_word_scroll(clockwise);
         } else if (layer == _WINDOWMANAGER) {
             encoder_action_move_space(clockwise);

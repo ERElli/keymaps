@@ -4,6 +4,7 @@
 
 enum layers {
     _QWERTY = 0,
+    _NAV,
     _NSL,
     _SNSL,
     _ADJUST,
@@ -15,6 +16,7 @@ enum layers {
  * https://docs.qmk.fm/#/keycodes?id=layer-switching
  */
 #define ADJUST TG(_ADJUST)
+#define NAV LT(_NAV, KC_SPC)
 #define NSL LT(_NSL, KC_BSPC)
 #define SNSL LT(_SNSL, KC_ENT)
 #define WINMAN TG(_WINDOWMANAGER)
@@ -52,7 +54,6 @@ enum layers {
  * Tap Dance
  * https://docs.qmk.fm/#/feature_tap_dance
  */
-#define TD_CP TD(TD_COPY_PASTE) /* Copy when tapped once, paste when tapped twice */
 #define TD_ESC TD(TD_ESC_CAPS)  /* Esc when tapped once, caps when tapped twice */
 #define TD_SC TD(TD_TOOL_SEL)   /* Open screenshot tool when tapped once, take screenshot of selection when tapped twice */
 
@@ -75,9 +76,12 @@ enum layers {
  * Miscellaneous keys
 */
 #define KC_BWD A(KC_LEFT)   /* Move right (backward) one word */
-#define KC_COPY G(KC_C)     /* Copy */
 #define KC_FWD A(KC_RGHT)   /* Move left (forward) one word */
-#define KC_PASTE G(KC_V)    /* Paste */
 #define NEW_WIN G(S(KC_W))  /* System defined command to move chrome tab to new window */
 #define SS_TOOL G(S(KC_5))  /* Open screenshot tool */
 #define SS_SEL G(S(KC_4))   /* Take screenshot of selection */
+#define U_CPY G(KC_C)       /* Copy */
+#define U_CUT G(KC_X)       /* Cut */
+#define U_PST G(KC_V)       /* Paste */
+#define U_RDO SCMD(KC_Z)    /* Redo */
+#define U_UDO G(KC_Z)       /* Undo */
