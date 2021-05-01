@@ -6,6 +6,7 @@
     - [Window Manager Keys](#window-manager-keys)
   - [Layers](#layers)
     - [QWERTY](#qwerty)
+    - [MOUSE](#mouse)
     - [NAV](#nav)
     - [NSL](#nsl)
     - [SNSL](#snsl)
@@ -42,6 +43,7 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
+| MOUSE   | Momentarily activate MOUSE layer when held, tab when tapped.               |
 | NAV     | Momentarily activate NAV layer when held, space when tapped.               |
 | NSL     | Momentarily activate NSL layer when held, backspace when tapped.           |
 | SNSL    | Momentarily activate SNSL layer when held, enter when tapped.              |
@@ -78,6 +80,21 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |  Mute  | OS_LALT| OS_LGUI| Space  |  Tab   |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+```
+
+### MOUSE
+```c
+/*
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |        |        |        |        |        |                                      |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |        |  MC L  |  MC D  |  MC U  |  MC R  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |        |        |        |        |        |        |        |  |        |        |        |  MW L  |  MW D  |  MW U  |  MW R  |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |        |        |        |  |  MB1   |  MB2   |  MB3   |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```

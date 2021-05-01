@@ -62,6 +62,9 @@ void render_layer_state(void) {
         case _QWERTY:
             oled_write_P(PSTR("Default"), false);
             break;
+        case _MOUSE:
+            oled_write_P(PSTR("Mouse"), false);
+            break;
         case _NSL:
             oled_write_P(PSTR("Num & Syms"), false);
             break;

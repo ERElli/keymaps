@@ -4,6 +4,7 @@
 
 enum layers {
     _QWERTY = 0,
+    _MOUSE,
     _NAV,
     _NSL,
     _SNSL,
@@ -16,6 +17,7 @@ enum layers {
  * https://docs.qmk.fm/#/keycodes?id=layer-switching
  */
 #define ADJUST TG(_ADJUST)
+#define MOUSE LT(_MOUSE, KC_TAB)
 #define NAV LT(_NAV, KC_SPC)
 #define NSL LT(_NSL, KC_BSPC)
 #define SNSL LT(_SNSL, KC_ENT)
