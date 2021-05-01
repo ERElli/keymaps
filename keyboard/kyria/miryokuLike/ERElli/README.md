@@ -47,7 +47,7 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | NAV     | Momentarily activate NAV layer when held, space when tapped.               |
 | NSL     | Momentarily activate NSL layer when held, backspace when tapped.           |
 | SNSL    | Momentarily activate SNSL layer when held, enter when tapped.              |
-| WINMAN  | Toggle Window Manager layer                                                |
+| WINMAN  | Momentarily activate WINMAN layer when held, escape when tapped.           |
 
 ### Window Manager Keys
 I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
@@ -79,7 +79,7 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI| Space  |  Tab   |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
@@ -163,13 +163,13 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
 ```c
 /*
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * | TO(0)  |        | NewWin |        |        |        |                                      | CNR_TL | CNR_TR | CNR_BL | CNR_BR |        |        |
+ * |        |        |        |        |        |        |                                      |  Max   | CNR_TL | CNR_TR | CNR_BL | CNR_BR |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |        | DISP_L | DISP_R |  Max   |        |                                      | HALF_L | HALF_B | HALF_T | HALF_R |        |        |
+ * |        |        |        |        |        |        |                                      |  Cen   | HALF_L | HALF_B | HALF_T | HALF_R |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        | Center |        |        |        |        |  |        |        |        |        |        |        |        |        |
+ * |        |        |        |        |        |        |        |        |  |        |        | NewWin | DISP_L |        |        | DISP_R |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Res   |        |        |        |        |  |        |        |        |        |  Res   |
+ *                            |        |        |        |        |        |  |        | WS LFT | WS_RGT |        |  Res   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```

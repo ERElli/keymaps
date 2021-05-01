@@ -21,7 +21,7 @@ enum layers {
 #define NAV LT(_NAV, KC_SPC)
 #define NSL LT(_NSL, KC_BSPC)
 #define SNSL LT(_SNSL, KC_ENT)
-#define WINMAN TG(_WINDOWMANAGER)
+#define WINMAN LT(_WINDOWMANAGER, KC_ESC)
 
 /*
  * One shot mod keys
@@ -73,6 +73,8 @@ enum layers {
 #define WIN_CEN A(G(KC_C))      /* Move window to the center */
 #define WIN_MAX A(G(KC_F))      /* Resize window to fill screen */
 #define WIN_RES C(A(KC_BSPC))   /* Restore window to previous settings */
+#define WS_LFT C(KC_LEFT)       /* Move one workspace to the left */
+#define WS_RGT C(KC_RGHT)       /* Move one workspace to the right */
 
 /*
  * Miscellaneous keys

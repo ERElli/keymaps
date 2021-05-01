@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| OS_LGUI|  Nav   |  Tab   |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_QWERTY] = LAYOUT(
          TD_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
         CTL_TAB,   CTL_A,   ALT_S,   GUI_D,   SFT_F,    KC_G,                                        KC_H,   SFT_J,   GUI_K,   ALT_L, CTL_SCN, KC_QUOT,
-        OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD, XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
-                                   KC_MUTE, OS_LALT, OS_LGUI,     NAV,   MOUSE,    SNSL,     NSL, OS_RGUI, OS_RALT,  KC_DEL
+        OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD,   KC_NO,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
+                                   KC_MUTE, OS_LALT,  WINMAN,     NAV,   MOUSE,    SNSL,     NSL, OS_RGUI, OS_RALT,  KC_DEL
     ),
 
 /*
@@ -160,20 +160,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Rectangle can be found at https://github.com/rxhanson/Rectangle
  *
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * | TO(0)  |        | NewWin |        |        |        |                                      | CNR_TL | CNR_TR | CNR_BL | CNR_BR |        |        |
+ * |        |        |        |        |        |        |                                      |  Max   | CNR_TL | CNR_TR | CNR_BL | CNR_BR |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |        | DISP_L | DISP_R |  Max   |        |                                      | HALF_L | HALF_B | HALF_T | HALF_R |        |        |
+ * |        |        |        |        |        |        |                                      |  Cen   | HALF_L | HALF_B | HALF_T | HALF_R |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        | Center |        |        |        |        |  |        |        |        |        |        |        |        |        |
+ * |        |        |        |        |        |        |        |        |  |        |        | NewWin | DISP_L |        |        | DISP_R |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Res   |        |        |        |        |  |        |        |        |        |  Res   |
+ *                            |        |        |        |        |        |  |        | WS LFT | WS_RGT |        |  Res   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_WINDOWMANAGER] = LAYOUT(
-        TO(0)  , XXXXXXX, NEW_WIN, XXXXXXX, XXXXXXX, XXXXXXX,                                      CNR_TL,  CNR_TR,  CNR_BL,  CNR_BR, XXXXXXX, _______,
-        _______, XXXXXXX,  DISP_L,  DISP_R, WIN_MAX, XXXXXXX,                                      HALF_L,  HALF_B,  HALF_T,  HALF_R, XXXXXXX, _______,
-        _______, XXXXXXX, XXXXXXX, WIN_CEN, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-                                   WIN_RES, _______, _______, _______, _______, _______, _______, _______, _______, WIN_RES
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                     WIN_MAX,  CNR_TL,  CNR_TR,  CNR_BL,  CNR_BR,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                     WIN_CEN,  HALF_L,  HALF_B,  HALF_T,  HALF_R,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, NEW_WIN,  DISP_L,   KC_NO,   KC_NO,  DISP_R,   KC_NO,
+                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  WS_LFT,  WS_RGT,   KC_NO, WIN_RES
     ),
 
 // /*
@@ -261,17 +261,13 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     const uint8_t layer = get_highest_layer(layer_state);
 
     if (index == 0) {
-        if (layer == _WINDOWMANAGER) {
-            encoder_action_window_resize(clockwise);
-        } else {
-            encoder_action_volume(clockwise);
-        }
+        encoder_action_volume(clockwise);
     }
     else if (index == 1) {
         if (layer == _NAV) {
             encoder_action_word_scroll(clockwise);
         } else if (layer == _WINDOWMANAGER) {
-            encoder_action_move_space(clockwise);
+            encoder_action_window_resize(clockwise);
         } else {
             encoder_action_mouse_wheel(clockwise);
         }
@@ -327,8 +323,6 @@ bool led_update_user(led_t led_state) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _NSL, _SNSL, _WINDOWMANAGER);
-
     rgblight_set_layer_state(1, layer_state_cmp(state, _NSL));
     rgblight_set_layer_state(2, layer_state_cmp(state, _SNSL));
     rgblight_set_layer_state(3, layer_state_cmp(state, _WINDOWMANAGER));
