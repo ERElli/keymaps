@@ -97,7 +97,7 @@ void render_status(void) {
         oled_advance_page(true);
 
         render_layer_state();
-        render_mod_status(get_mods() | get_oneshot_mods());
+        render_mod_status(get_mods());
         render_lock_status();
     } else {
         render_kyria_logo();

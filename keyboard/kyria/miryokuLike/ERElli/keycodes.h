@@ -26,22 +26,9 @@ enum layers {
 #define WINMAN LT(_WINDOWMANAGER, KC_ESC)
 
 /*
- * One shot mod keys
- * https://docs.qmk.fm/#/one_shot_keys
-*/
-#define OS_LALT OSM(MOD_LALT)
-#define OS_LGUI OSM(MOD_LGUI)
-#define OS_LSFT OSM(MOD_LSFT)
-#define OS_RALT OSM(MOD_RALT)
-#define OS_RGUI OSM(MOD_RGUI)
-#define OS_RSFT OSM(MOD_RSFT)
-
-/*
  * Mod-tap keys
  * https://docs.qmk.fm/#/keycodes?id=mod-tap-keys
 */
-#define CTL_TAB LCTL_T(KC_TAB)  /* Control when held, Tab when tapped */
-
 // Left-hand home row mods
 #define CTL_A LCTL_T(KC_A)      /* Control when held, A when tapped */
 #define ALT_S LALT_T(KC_S)      /* Alt when held, S when tapped */

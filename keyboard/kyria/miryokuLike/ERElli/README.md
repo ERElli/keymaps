@@ -1,7 +1,6 @@
 - [ERElli Kyria Keymap](#erelli-kyria-keymap)
   - [Custom Keys](#custom-keys)
     - [Mod Taps](#mod-taps)
-    - [One Shot Keys](#one-shot-keys)
     - [Layer Keys](#layer-keys)
     - [Window Manager Keys](#window-manager-keys)
   - [Layers](#layers)
@@ -28,17 +27,6 @@ Note: Some of these keycodes are used for homerow mods. You can read more about 
 | GUI_K   | GUI when held, k when tapped.       |
 | ALT_L   | Alt when held, l when tapped.       |
 | CTL_SCN | Control when held, ; when tapped.   |
-
-### [One Shot Keys](https://docs.qmk.fm/#/one_shot_keys)
-Note: Tapping a one shot key activates it for one second, double tapping holds until it is pressed again
-| Keycode | Description           |
-| ------- | --------------------- |
-| OS_LSFT | One shot left Shift.  |
-| OS_LALT | One shot left Alt.    |
-| OS_LGUI | One shot left GUI.    |
-| OS_RGUI | One shot right GUI.   |
-| OS_RALT | One shot right Alt.   |
-| OS_RSFT | One shot right Shift. |
 
 ### [Layer Keys](https://docs.qmk.fm/#/feature_layers)
 | Keycode | Description                                                                |
@@ -75,13 +63,13 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
 ```c
 /*
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * |        |   Q    |   W    |   E    |   R    |   T    |                                      |   Y    |   U    |   I    |   O    |   P    |   BS   |
+ * |        |   Q    |   W    |   E    |   R    |   T    |                                      |   Y    |   U    |   I    |   O    |   P    |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * | LCTL_T | CTL_A  | ALT_S  | GUI_D  | SFT_F  |   G    |                                      |   H    | SFT_J  | GUI_K  | ALT_L  | CTL_SCN|  '  "  |
+ * |        | CTL_A  | ALT_S  | GUI_D  | SFT_F  |   G    |                                      |   H    | SFT_J  | GUI_K  | ALT_L  | CTL_SCN|        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
+ * |        |   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | FUNCL  | OS_RALT|  DEL   |
+ *                            |  Mute  |        | WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | FUNCL  |        |  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
@@ -137,7 +125,7 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |   [    |   7    |   8    |   9    |   ]    |                                      |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |  Space |   '    |   4    |   5    |   6    |   =    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |        |   ;    |   4    |   5    |   6    |   =    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * |        |   `    |   1    |   2    |   3    |   \    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
@@ -152,7 +140,7 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |   {    |   &    |   *    |   (    |   }    |                                      |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |  Space |   "    |   $    |   %    |   ^    |   +    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |        |   "    |   $    |   %    |   ^    |   +    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * |        |   ~    |   !    |   @    |   #    |   |    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
@@ -165,7 +153,7 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
 ```c
 /*
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * | TO(0)  |   F1   |   F2   |   F3   |   F4   |   F5   |                                      |   F6   |   F7   |   F8   |   F9   |  F10   |        |
+ * |        |   F1   |   F2   |   F3   |   F4   |   F5   |                                      |   F6   |   F7   |   F8   |   F9   |  F10   |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
  * |        |  TOG   |  SAI   |  HUI   |  VAI   |  MOD   |                                      |        |  BRMU  |        |  F11   |  F12   |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|

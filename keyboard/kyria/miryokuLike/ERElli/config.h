@@ -25,9 +25,6 @@
     #define OLED_DISPLAY_128X64
 #endif
 
-#define ONESHOT_TAP_TOGGLE 2  /* Tapping this number of times holds the key until tapped once again. */
-#define ONESHOT_TIMEOUT 1000  /* Time (in ms) before the one shot key is released */
-
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_LAYERS
     #define RGBLIGHT_LIMIT_VAL 100
