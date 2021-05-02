@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |   [    |   7    |   8    |   9    |   ]    |                                      |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |  Space |   ;    |   4    |   5    |   6    |   =    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |  Space |   '    |   4    |   5    |   6    |   =    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * |        |   `    |   1    |   2    |   3    |   \    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_NSL] = LAYOUT(
           KC_NO, KC_LBRC,    KC_7,    KC_8,    KC_9, KC_RBRC,                                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-         KC_SPC, KC_SCLN,    KC_4,    KC_5,    KC_6,  KC_EQL,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
+         KC_SPC, KC_QUOT,    KC_4,    KC_5,    KC_6,  KC_EQL,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
           KC_NO,  KC_GRV,    KC_1,    KC_2,    KC_3, KC_BSLS,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
                                     KC_NO ,   KC_NO,  KC_DOT,    KC_0, KC_MINS,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
     ),
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |   {    |   &    |   *    |   (    |   }    |                                      |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |  Space |   :    |   $    |   %    |   ^    |   +    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |  Space |   "    |   $    |   %    |   ^    |   +    |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * |        |   ~    |   !    |   @    |   #    |   |    |        |        |  |        |        |        |        |        |        |        |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_SNSL] = LAYOUT(
         KC_NO, KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR,                                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_SPC, KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
+       KC_SPC, KC_DQT, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
         KC_NO, KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
                                    KC_NO,   KC_NO, KC_LPRN, KC_RPRN, KC_UNDS,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
     ),
