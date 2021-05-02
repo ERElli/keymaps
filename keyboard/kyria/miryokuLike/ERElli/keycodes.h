@@ -54,13 +54,6 @@ enum layers {
 #define ALT_L LALT_T(KC_L)      /* Alt when held, L when tapped */
 #define CTL_SCN RCTL_T(KC_SCLN) /* Control when held, KC_SCLN when tapped */
 
-/*
- * Tap Dance
- * https://docs.qmk.fm/#/feature_tap_dance
- */
-#define TD_ESC TD(TD_ESC_CAPS)  /* Esc when tapped once, caps when tapped twice */
-#define TD_SC TD(TD_TOOL_SEL)   /* Open screenshot tool when tapped once, take screenshot of selection when tapped twice */
-
 /* Window manager shortcut keys */
 #define CNR_BL C(S(G(KC_LEFT))) /* Move window to bottom left corner */
 #define CNR_BR C(S(G(KC_RGHT))) /* Move window to bottom right corner */

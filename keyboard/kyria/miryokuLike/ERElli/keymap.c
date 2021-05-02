@@ -28,10 +28,6 @@
     #include "rgb_util.h"
 #endif
 
-#ifdef TAP_DANCE_ENABLE
-    #include "tap_dance.c"
-#endif
-
 #include "keycodes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -39,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Base Layer: QWERTY
  *
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * | TD_ESC |   Q    |   W    |   E    |   R    |   T    |                                      |   Y    |   U    |   I    |   O    |   P    |   BS   |
+ * |        |   Q    |   W    |   E    |   R    |   T    |                                      |   Y    |   U    |   I    |   O    |   P    |   BS   |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
  * | LCTL_T | CTL_A  | ALT_S  | GUI_D  | SFT_F  |   G    |                                      |   H    | SFT_J  | GUI_K  | ALT_L  | CTL_SCN|  '  "  |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
@@ -49,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_QWERTY] = LAYOUT(
-         TD_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
+          KC_NO,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
         CTL_TAB,   CTL_A,   ALT_S,   GUI_D,   SFT_F,    KC_G,                                        KC_H,   SFT_J,   GUI_K,   ALT_L, CTL_SCN, KC_QUOT,
         OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD,   KC_NO,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
                                    KC_MUTE, OS_LALT,  WINMAN,     NAV,   MOUSE,    SNSL,     NSL,   FUNCL, OS_RALT,  KC_DEL
