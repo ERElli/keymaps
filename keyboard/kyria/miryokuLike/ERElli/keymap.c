@@ -282,29 +282,35 @@ const rgblight_segment_t PROGMEM caps_lock[] = RGBLIGHT_LAYER_SEGMENTS(
     {13, 1, HSV_CAPS}
 );
 
+const rgblight_segment_t PROGMEM mouse_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {10, 2, HSV_MOUSE},
+    {13, 1, HSV_MOUSE}
+);
+
+const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {10, 2, HSV_NAV},
+    {13, 1, HSV_NAV}
+);
+
 const rgblight_segment_t PROGMEM nsl_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 2, HSV_NSL},
-    {3, 1, HSV_NSL},
-    {10, 2, HSV_NSL},
-    {13, 1, HSV_NSL}
+    {3, 1, HSV_NSL}
 );
 
 const rgblight_segment_t PROGMEM snsl_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 2, HSV_SNSL},
-    {3, 1, HSV_SNSL},
-    {10, 2, HSV_SNSL},
-    {13, 1, HSV_SNSL}
+    {3, 1, HSV_SNSL}
 );
 
 const rgblight_segment_t PROGMEM winman_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, HSV_WINMAN},
-    {3, 1, HSV_WINMAN},
     {10, 2, HSV_WINMAN},
     {13, 1, HSV_WINMAN}
 );
 
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     caps_lock,
+    mouse_layer,
+    nav_layer,
     nsl_layer,
     snsl_layer,
     winman_layer
@@ -323,9 +329,11 @@ bool led_update_user(led_t led_state) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(1, layer_state_cmp(state, _NSL));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _SNSL));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _WINDOWMANAGER));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _MOUSE));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _NAV));
+    rgblight_set_layer_state(3, layer_state_cmp(state, _NSL));
+    rgblight_set_layer_state(4, layer_state_cmp(state, _SNSL));
+    rgblight_set_layer_state(5, layer_state_cmp(state, _WINDOWMANAGER));
 
     return state;
 }
