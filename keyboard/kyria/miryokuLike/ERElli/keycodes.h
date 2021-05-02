@@ -4,12 +4,12 @@
 
 enum layers {
     _QWERTY = 0,
+    _ADJUST,
     _FUNC,
     _MOUSE,
     _NAV,
     _NSL,
     _SNSL,
-    _ADJUST,
     _WINDOWMANAGER
 };
 

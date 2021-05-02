@@ -13,6 +13,7 @@
     - [ADJUST](#adjust)
     - [WINDOWMANAGER](#windowmanager)
 # ERElli [Kyria](https://github.com/splitkb/kyria) Keymap
+This keymap takes heavily from the [Miryoku](https://github.com/manna-harbour/qmk_firmware/tree/miryoku/users/manna-harbour_miryoku) layout
 ## Custom Keys
 ### [Mod Taps](https://docs.qmk.fm/#/mod_tap)
 Note: Some of these keycodes are used for homerow mods. You can read more about it [here](https://precondition.github.io/home-row-mods)
@@ -31,7 +32,7 @@ Note: Some of these keycodes are used for homerow mods. You can read more about 
 ### [Layer Keys](https://docs.qmk.fm/#/feature_layers)
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
-| ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
+| ADJUST  | Toggle Adjust layer.                                                       |
 | FUNCL   | Momentarily activate FUNCL layer when held, delete when tapped.            |
 | MOUSE   | Momentarily activate MOUSE layer when held, tab when tapped.               |
 | NAV     | Momentarily activate NAV layer when held, space when tapped.               |

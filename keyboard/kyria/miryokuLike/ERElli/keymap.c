@@ -52,6 +52,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 /*
+ * Adjust Layer: Function keys, RGB
+ *
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |   F1   |   F2   |   F3   |   F4   |   F5   |                                      |   F6   |   F7   |   F8   |   F9   |  F10   |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  TOG   |  SAI   |  HUI   |  VAI   |  MOD   |                                      |        |  BRMU  |        |  F11   |  F12   |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |        |  SAD   |  HUD   |  VAD   |  RMOD  |        |        |  |        |        |        |  BRMD  |        |        |        |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |        |        |        |  |        |        |        |        |        |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+    [_ADJUST] = LAYOUT(
+        KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,   KC_NO,
+        KC_NO, RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI, RGB_MOD,                                       KC_NO, KC_BRMU,   KC_NO,  KC_F11,  KC_F12,   KC_NO,
+        KC_NO,   KC_NO, RGB_SAD, RGB_HUD, RGB_VAD,RGB_RMOD,  ADJUST,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_BRMD,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+    ),
+
+/*
  * Function Layer
  *
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
@@ -92,6 +112,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 /*
+ * Nav Layer
+ *
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |        |        |        |        |        |                                      |  Undo  |  Cut   |  Copy  | Paste  |  Redo  |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  Caps  |  Left  |  Down  |   Up   | Right  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |        |        |        |        |        |        |        |  |        |        |        |  Home  | Pg Dn  | Pg Up  |  End   |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |        |        |        |  | Enter  |  Bspc  | Delete |        |        |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+    [_NAV] = LAYOUT(
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                       U_UDO,   U_CUT,   U_CPY,   U_PST,   U_RDO,   KC_NO,
+        KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,   KC_NO,                                     KC_CAPS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,   KC_NO,
+                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_ENT, KC_BSPC,  KC_DEL,   KC_NO,   KC_NO
+    ),
+
+/*
  * Numeral And Symbols
  *
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
@@ -129,46 +169,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO,  KC_DQT, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
         KC_NO, KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
                                    KC_NO,   KC_NO, KC_LPRN, KC_RPRN, KC_UNDS,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
-    ),
-
-/*
- * Nav Layer
- *
- * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * |        |        |        |        |        |        |                                      |  Undo  |  Cut   |  Copy  | Paste  |  Redo  |        |
- * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  Caps  |  Left  |  Down  |   Up   | Right  |        |
- * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |  |        |        |        |  Home  | Pg Dn  | Pg Up  |  End   |        |
- * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |        |        |        |        |        |  | Enter  |  Bspc  | Delete |        |        |
- *                            `--------------------------------------------'  `--------------------------------------------'
- */
-    [_NAV] = LAYOUT(
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                       U_UDO,   U_CUT,   U_CPY,   U_PST,   U_RDO,   KC_NO,
-        KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,   KC_NO,                                     KC_CAPS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,   KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,   KC_NO,
-                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_ENT, KC_BSPC,  KC_DEL,   KC_NO,   KC_NO
-    ),
-
-/*
- * Adjust Layer: Function keys, RGB
- *
- * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
- * |        |   F1   |   F2   |   F3   |   F4   |   F5   |                                      |   F6   |   F7   |   F8   |   F9   |  F10   |        |
- * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |  TOG   |  SAI   |  HUI   |  VAI   |  MOD   |                                      |        |  BRMU  |        |  F11   |  F12   |        |
- * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |  SAD   |  HUD   |  VAD   |  RMOD  |        |        |  |        |        |        |  BRMD  |        |        |        |        |
- * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |        |        |        |        |        |  |        |        |        |        |        |
- *                            `--------------------------------------------'  `--------------------------------------------'
- */
-    [_ADJUST] = LAYOUT(
-        KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,   KC_NO,
-        KC_NO, RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI, RGB_MOD,                                       KC_NO, KC_BRMU,   KC_NO,  KC_F11,  KC_F12,   KC_NO,
-        KC_NO,   KC_NO, RGB_SAD, RGB_HUD, RGB_VAD,RGB_RMOD,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_BRMD,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
     ),
 
 /*
