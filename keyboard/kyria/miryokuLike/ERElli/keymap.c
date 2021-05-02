@@ -45,14 +45,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | FUNCL  | OS_RALT|  DEL   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_QWERTY] = LAYOUT(
          TD_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
         CTL_TAB,   CTL_A,   ALT_S,   GUI_D,   SFT_F,    KC_G,                                        KC_H,   SFT_J,   GUI_K,   ALT_L, CTL_SCN, KC_QUOT,
         OS_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  ADJUST, KC_LEAD, KC_LEAD,   KC_NO,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OS_RSFT,
-                                   KC_MUTE, OS_LALT,  WINMAN,     NAV,   MOUSE,    SNSL,     NSL, OS_RGUI, OS_RALT,  KC_DEL
+                                   KC_MUTE, OS_LALT,  WINMAN,     NAV,   MOUSE,    SNSL,     NSL,   FUNCL, OS_RALT,  KC_DEL
+    ),
+
+/*
+ * Function Layer
+ *
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |  F12   |   F7   |   F8   |   F9   |        |                                      |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  F11   |   F4   |   F5   |   F6   |        |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |  F10   |   F1   |   F2   |   F3   |        |        |        |  |        |        |        |        |        |        |        |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |  Esc   | Space  |  Tab   |  |        |        |        |        |        |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+    [_FUNC] = LAYOUT(
+        KC_NO,  KC_F12,   KC_F7,   KC_F8,   KC_F9,   KC_NO,                                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+        KC_NO,  KC_F11,   KC_F4,   KC_F5,   KC_F6,   KC_NO,                                       KC_NO, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL,   KC_NO,
+        KC_NO,  KC_F10,   KC_F1,   KC_F2,   KC_F3,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                                   KC_NO,   KC_NO,  KC_ESC,  KC_SPC,  KC_TAB,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
     ),
 
 /*
@@ -282,6 +302,11 @@ const rgblight_segment_t PROGMEM caps_lock[] = RGBLIGHT_LAYER_SEGMENTS(
     {13, 1, HSV_CAPS}
 );
 
+const rgblight_segment_t PROGMEM func_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 2, HSV_FUNC},
+    {3, 1, HSV_FUNC}
+);
+
 const rgblight_segment_t PROGMEM mouse_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {10, 2, HSV_MOUSE},
     {13, 1, HSV_MOUSE}
@@ -309,6 +334,7 @@ const rgblight_segment_t PROGMEM winman_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     caps_lock,
+    func_layer,
     mouse_layer,
     nav_layer,
     nsl_layer,
@@ -329,11 +355,12 @@ bool led_update_user(led_t led_state) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(1, layer_state_cmp(state, _MOUSE));
-    rgblight_set_layer_state(2, layer_state_cmp(state, _NAV));
-    rgblight_set_layer_state(3, layer_state_cmp(state, _NSL));
-    rgblight_set_layer_state(4, layer_state_cmp(state, _SNSL));
-    rgblight_set_layer_state(5, layer_state_cmp(state, _WINDOWMANAGER));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _FUNC));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _MOUSE));
+    rgblight_set_layer_state(3, layer_state_cmp(state, _NAV));
+    rgblight_set_layer_state(4, layer_state_cmp(state, _NSL));
+    rgblight_set_layer_state(5, layer_state_cmp(state, _SNSL));
+    rgblight_set_layer_state(6, layer_state_cmp(state, _WINDOWMANAGER));
 
     return state;
 }

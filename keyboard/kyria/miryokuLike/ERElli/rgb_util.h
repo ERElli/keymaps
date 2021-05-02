@@ -3,6 +3,7 @@ uint8_t sat;
 uint8_t val;
 
 #define HSV_DEFAULT 40, 180, 100
+#define HSV_FUNC 170, 255, 100      /* Blue */
 #define HSV_MOUSE 36, 255, 100      /* Gold */
 #define HSV_NAV 213, 255, 100       /* Magenta */
 #define HSV_NSL 191, 255, 100       /* Purple */

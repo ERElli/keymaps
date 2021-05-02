@@ -59,23 +59,26 @@ void render_lock_status(void) {
 void render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
-        case _QWERTY:
-            oled_write_P(PSTR("Default"), false);
+        case _ADJUST:
+            oled_write_P(PSTR("Adjust"), false);
+            break;
+        case _FUNC:
+            oled_write_P(PSTR("Function"), false);
             break;
         case _MOUSE:
             oled_write_P(PSTR("Mouse"), false);
             break;
-        case _NSL:
-            oled_write_P(PSTR("Num & Syms"), false);
-            break;
-        case _SNSL:
-            oled_write_P(PSTR("Shifted"), false);
-            break;
         case _NAV:
             oled_write_P(PSTR("Nav & Edit"), false);
             break;
-        case _ADJUST:
-            oled_write_P(PSTR("Adjust"), false);
+        case _NSL:
+            oled_write_P(PSTR("Num & Syms"), false);
+            break;
+        case _QWERTY:
+            oled_write_P(PSTR("Default"), false);
+            break;
+        case _SNSL:
+            oled_write_P(PSTR("Shifted"), false);
             break;
         case _WINDOWMANAGER:
             oled_write_P(PSTR("WindowManager"), false);

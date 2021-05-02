@@ -6,6 +6,7 @@
     - [Window Manager Keys](#window-manager-keys)
   - [Layers](#layers)
     - [QWERTY](#qwerty)
+    - [FUNCL](#funcl)
     - [MOUSE](#mouse)
     - [NAV](#nav)
     - [NSL](#nsl)
@@ -43,6 +44,7 @@ Note: Tapping a one shot key activates it for one second, double tapping holds u
 | Keycode | Description                                                                |
 | ------- | -------------------------------------------------------------------------- |
 | ADJUST  | Momentarily activate to toggle Adjust layer when held, escape when tapped. |
+| FUNCL   | Momentarily activate FUNCL layer when held, delete when tapped.            |
 | MOUSE   | Momentarily activate MOUSE layer when held, tab when tapped.               |
 | NAV     | Momentarily activate NAV layer when held, space when tapped.               |
 | NSL     | Momentarily activate NSL layer when held, backspace when tapped.           |
@@ -79,7 +81,22 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
  * | OS_LSFT|   Z    |   X    |   C    |   G    |   B    | ADJUST | Leader |  | Leader |        |   N    |   M    |  ,  <  |  .  >  |  /  ?  | OS_RSFT|
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | OS_RGUI| OS_RALT|  DEL   |
+ *                            |  Mute  | OS_LALT| WINMAN |  Nav   | Mouse  |  |  SNSL  |  NSL   | FUNCL  | OS_RALT|  DEL   |
+ *                            `--------------------------------------------'  `--------------------------------------------'
+ */
+```
+
+### FUNCL
+```c
+/*
+ * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
+ * |        |  F12   |   F7   |   F8   |   F9   |        |                                      |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
+ * |        |  F11   |   F4   |   F5   |   F6   |        |                                      |        | Shift  |  Cmd   |  Alt   |  Ctrl  |        |
+ * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
+ * |        |  F10   |   F1   |   F2   |   F3   |        |        |        |  |        |        |        |        |        |        |        |        |
+ * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
+ *                            |        |        |  Esc   | Space  |  Tab   |  |        |        |        |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
 ```
