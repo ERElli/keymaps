@@ -1,3 +1,5 @@
+![kyria](https://user-images.githubusercontent.com/32199063/116836020-9ac9d380-ab9f-11eb-834a-be092c02be64.png)
+> Note: I wasn't able to add legends for WINDOWMANAGER and ADUST layers to this image
 - [ERElli Kyria Keymap](#erelli-kyria-keymap)
   - [Custom Keys](#custom-keys)
     - [Mod Taps](#mod-taps)
