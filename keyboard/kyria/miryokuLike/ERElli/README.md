@@ -1,4 +1,5 @@
-![kyria](https://user-images.githubusercontent.com/32199063/116836020-9ac9d380-ab9f-11eb-834a-be092c02be64.png)
+
+![kyria](https://user-images.githubusercontent.com/32199063/118385977-50f4da80-b5ee-11eb-9525-40069ae0ef87.png)
 > Note: I wasn't able to add legends for WINDOWMANAGER and ADUST layers to this image
 - [ERElli Kyria Keymap](#erelli-kyria-keymap)
   - [Custom Keys](#custom-keys)
