@@ -1,5 +1,4 @@
-
-![kyria](https://user-images.githubusercontent.com/32199063/118385977-50f4da80-b5ee-11eb-9525-40069ae0ef87.png)
+![kyria](./layout-editor-files/kyria.png)
 > Note: I wasn't able to add legends for WINDOWMANAGER and ADUST layers to this image
 - [ERElli Kyria Keymap](#erelli-kyria-keymap)
   - [Custom Keys](#custom-keys)
@@ -99,9 +98,9 @@ I'm using the [Rectangle](https://github.com/rxhanson/Rectangle) window manager
  * ,-----------------------------------------------------.                                      ,-----------------------------------------------------.
  * |        |        |        |        |        |        |                                      |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
- * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  MB1   |  MC L  |  MC D  |  MC U  |  MC R  |        |
+ * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  MB1   |  MW L  |  MW D  |  MW U  |  MW R  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |  |        |        |  MB2   |  MW L  |  MW D  |  MW U  |  MW R  |        |
+ * |        |        |        |        |        |        |        |        |  |        |        |  MB2   |  MC L  |  MC D  |  MC U  |  MC R  |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |        |        |        |        |        |  |  MB1   |  MB2   |  MB3   |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
