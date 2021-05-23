@@ -381,6 +381,18 @@ void matrix_scan_user(void) {
             SEND_STRING(SS_LGUI(SS_LSFT("t")));
             leader_success = true;
         }
+        SEQ_TWO_KEYS(KC_M, KC_A) {
+            tap_code16(C(KC_DOWN));
+            leader_success = true;
+        }
+        SEQ_TWO_KEYS(KC_M, KC_C) {
+            tap_code16(C(KC_UP));
+            leader_success = true;
+        }
+        SEQ_TWO_KEYS(KC_M, KC_D) {
+            tap_code16(KC_F11);
+            leader_success = true;
+        }
         SEQ_TWO_KEYS(KC_S, KC_T) {
             SEND_STRING(SS_LGUI(SS_LSFT("5")));
             leader_success = true;
