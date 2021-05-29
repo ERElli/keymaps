@@ -58,6 +58,11 @@ enum layers {
 #define WS_LFT C(KC_LEFT)       /* Move one workspace to the left */
 #define WS_RGT C(KC_RGHT)       /* Move one workspace to the right */
 
+/* MacOS Misson Control */
+#define MC_APP C(KC_DOWN)   /* Show all application windows */
+#define MC_CTL C(KC_UP)     /* Mission Control */
+#define MC_DSK KC_F11       /* Show desktop */
+
 /*
  * Miscellaneous keys
 */

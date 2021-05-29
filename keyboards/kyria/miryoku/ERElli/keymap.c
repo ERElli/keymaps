@@ -180,16 +180,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
  * |        |        |        |        |        |        |                                      |  Cen   | HALF_L | HALF_B | HALF_T | HALF_R |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |  |        |        | NewWin | DISP_L |        |        | DISP_R |        |
+ * |        |        |        |        |        |        |        |        |  |        |        | NewWin | DISP_L | MC_APP | MC_CTL | DISP_R |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
- *                            |        |        |        |        |        |  |        | WS LFT | WS_RGT |        |  Res   |
+ *                            |        |        |        |        |        |  |        | WS LFT | WS_RGT | MC_DSK |  Res   |
  *                            `--------------------------------------------'  `--------------------------------------------'
  */
     [_WINDOWMANAGER] = LAYOUT(
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                     WIN_MAX,  CNR_TL,  CNR_TR,  CNR_BL,  CNR_BR,   KC_NO,
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                     WIN_CEN,  HALF_L,  HALF_B,  HALF_T,  HALF_R,   KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, NEW_WIN,  DISP_L,   KC_NO,   KC_NO,  DISP_R,   KC_NO,
-                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  WS_LFT,  WS_RGT,   KC_NO, WIN_RES
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, NEW_WIN,  DISP_L,  MC_APP,  MC_CTL,  DISP_R,   KC_NO,
+                                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  WS_LFT,  WS_RGT,  MC_DSK, WIN_RES
     ),
 
 // /*
