@@ -14,3 +14,5 @@ endif
 ifeq ($(strip $(LEADER_ENABLE)), yes)
 	SRC += rgb_util.c
 endif
+
+SRC += layer_util.c
