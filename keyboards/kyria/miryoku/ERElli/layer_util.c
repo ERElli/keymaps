@@ -5,14 +5,11 @@ void turnOffCurrentLayer(void) {
         case _MOUSE:
             layer_off(_MOUSE);
             break;
-        case _NSL:
-            layer_off(_NSL);
+        case _NAV:
+            layer_off(_NAV);
             break;
         case _WINDOWMANAGER:
             layer_off(_WINDOWMANAGER);
-            break;
-        case _NAV:
-            layer_off(_NAV);
             break;
         default:
             break;
