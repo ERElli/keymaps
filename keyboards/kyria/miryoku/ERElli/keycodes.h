@@ -13,17 +13,21 @@ enum layers {
     _WINDOWMANAGER
 };
 
+enum keycodes {
+    LOCK = SAFE_RANGE,
+    MOUSE,
+    NAV,
+    WINMAN,
+};
+
 /*
  * Layer keys
  * https://docs.qmk.fm/#/keycodes?id=layer-switching
  */
 #define ADJUST TG(_ADJUST)
 #define FUNCL LT(_FUNC, KC_DEL)
-#define MOUSE LT(_MOUSE, KC_TAB)
-#define NAV LT(_NAV, KC_SPC)
 #define NSL LT(_NSL, KC_BSPC)
 #define SNSL LT(_SNSL, KC_ENT)
-#define WINMAN LT(_WINDOWMANAGER, KC_ESC)
 
 /*
  * Mod-tap keys

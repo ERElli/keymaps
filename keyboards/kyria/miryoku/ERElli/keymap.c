@@ -29,6 +29,7 @@
 #endif
 
 #include "keycodes.h"
+#include "layer_util.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -99,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
  * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  MB1   |  MW L  |  MW D  |  MW U  |  MW R  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |  |        |        |  MB2   |  MC L  |  MC D  |  MC U  |  MC R  |        |
+ * |        |        |        |        |        |        |        |        |  |  LOCK  |        |  MB2   |  MC L  |  MC D  |  MC U  |  MC R  |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |        |        |        |        |        |  |  MB1   |  MB2   |  MB3   |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
@@ -107,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUSE] = LAYOUT(
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
         KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,   KC_NO,                                     KC_BTN1, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,   KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_BTN2, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    LOCK,   KC_NO, KC_BTN2, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,   KC_NO,
                                    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_BTN1, KC_BTN2, KC_BTN3,   KC_NO,   KC_NO
     ),
 
@@ -119,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
  * |        |  Ctrl  |  Alt   |  Cmd   | Shift  |        |                                      |  Caps  |  Left  |  Down  |   Up   | Right  |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |  |        |        |        |  Home  | Pg Dn  | Pg Up  |  End   |        |
+ * |        |        |        |        |        |        |        |        |  |  LOCK  |        |        |  Home  | Pg Dn  | Pg Up  |  End   |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |        |        |        |        |        |  | Enter  |  Bspc  | Delete |        |        |
  *                            `--------------------------------------------'  `--------------------------------------------'
@@ -127,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NAV] = LAYOUT(
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                       U_UDO,   U_CUT,   U_CPY,   U_PST,   U_RDO,   KC_NO,
         KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT,   KC_NO,                                     KC_CAPS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,   KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    LOCK,   KC_NO,   KC_NO, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,   KC_NO,
                                    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_ENT, KC_BSPC,  KC_DEL,   KC_NO,   KC_NO
     ),
 
@@ -180,7 +181,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------|                                      |--------+--------+--------+--------+--------+--------|
  * |        |        |        |        |        |        |                                      |  Cen   | HALF_L | HALF_B | HALF_T | HALF_R |        |
  * |--------+--------+--------+--------+--------+--------+-----------------.  ,-----------------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |  |        |        | NewWin | DISP_L | MC_APP | MC_CTL | DISP_R |        |
+ * |        |        |        |        |        |        |        |        |  |  LOCK  |        | NewWin | DISP_L | MC_APP | MC_CTL | DISP_R |        |
  * `--------------------------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------------------------'
  *                            |        |        |        |        |        |  |        | WS LFT | WS_RGT | MC_DSK |  Res   |
  *                            `--------------------------------------------'  `--------------------------------------------'
@@ -188,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_WINDOWMANAGER] = LAYOUT(
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                     WIN_MAX,  CNR_TL,  CNR_TR,  CNR_BL,  CNR_BR,   KC_NO,
         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                                     WIN_CEN,  HALF_L,  HALF_B,  HALF_T,  HALF_R,   KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, NEW_WIN,  DISP_L,  MC_APP,  MC_CTL,  DISP_R,   KC_NO,
+        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    LOCK,   KC_NO, NEW_WIN,  DISP_L,  MC_APP,  MC_CTL,  DISP_R,   KC_NO,
                                    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  WS_LFT,  WS_RGT,  MC_DSK, WIN_RES
     ),
 
@@ -212,6 +213,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 //     ),
 };
+
+bool isLocked = false;
+static uint16_t timer1;
+static uint16_t timer2 = TAPPING_TERM;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
@@ -258,6 +263,84 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RGB_VAD:
             if(record->event.pressed) {
                 rgblight_decrease_val_noeeprom();
+            }
+            break;
+        case LOCK:
+            if(record->event.pressed) {
+                if(isLocked == true){
+                    turnOffCurrentLayer();
+                }
+
+                isLocked = !isLocked;
+            }
+            break;
+        case MOUSE:
+            if(record->event.pressed) {
+                if(timer_elapsed(timer2) < TAPPING_TERM) {
+                    register_code(KC_TAB);
+                }
+                else {
+                    layer_on(_MOUSE);
+                    if(isLocked == false) {
+                        timer1 = timer_read();
+                    }
+                }
+            }
+            else {
+                if(isLocked == false) {
+                    layer_off(_MOUSE);
+                    if(timer_elapsed(timer1) < TAPPING_TERM) {
+                        register_code(KC_TAB);
+                    }
+                }
+                unregister_code(KC_TAB);
+                timer2 = timer_read();
+            }
+            break;
+        case NAV:
+            if(record->event.pressed) {
+                if(timer_elapsed(timer2) < TAPPING_TERM) {
+                    register_code(KC_SPC);
+                }
+                else {
+                    layer_on(_NAV);
+                    if(isLocked == false) {
+                        timer1 = timer_read();
+                    }
+                }
+            }
+            else {
+                if(isLocked == false) {
+                    layer_off(_NAV);
+                    if(timer_elapsed(timer1) < TAPPING_TERM) {
+                        register_code(KC_SPC);
+                    }
+                }
+                unregister_code(KC_SPC);
+                timer2 = timer_read();
+            }
+            break;
+        case WINMAN:
+            if(record->event.pressed) {
+                if(timer_elapsed(timer2) < TAPPING_TERM) {
+                    register_code(KC_ESC);
+                }
+                else {
+                    layer_on(_WINDOWMANAGER);
+                    if(isLocked == false) {
+                        timer1 = timer_read();
+                    }
+                }
+            }
+            else {
+                if(isLocked == false) {
+                    layer_off(_WINDOWMANAGER);
+                    if(timer_elapsed(timer1) < TAPPING_TERM) {
+                        register_code(KC_ESC);
+                    }
+                }
+                unregister_code(KC_ESC);
+                timer2 = timer_read();
             }
             break;
         default:
