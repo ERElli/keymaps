@@ -14,5 +14,4 @@ void turnOffCurrentLayer(void) {
         default:
             break;
     }
-    layer_on(_QWERTY);
 }
